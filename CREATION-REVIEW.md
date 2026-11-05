@@ -55,3 +55,19 @@ through a worker; the separate offline case exercises the real built worker.
 This is not an interactive OAuth test or proof of live server authorization.
 Physical QR scanning, a physical-device contact import and home-screen install
 are separate from browser-engine and downloaded-file checks.
+
+## Live follow-up
+
+Implementation `0a3aee49194ee6a23bfe761e0b6410501f651854` deployed successfully
+in run `41969583774` to https://card.freeappstore.online . On the real API, the
+existing owner session created a fictional contact (201), updated it (200), and
+an anonymous client read it (200). An unauthenticated edit was denied (401), and
+a subsequent read confirmed the original name was unchanged. Anonymous mobile
+Chromium and WebKit opened the real public page, decoded the QR code to its exact
+URL and produced no runtime errors or horizontal overflow. The synthetic contact
+was deleted and its API returned 404 afterward.
+
+The live private-draft flow also passed on desktop/mobile Chromium and WebKit,
+including actual vCard download, Profile return and offline reload. These live
+checks add owner/anonymous API evidence; they do not test a second real signed-in
+account, interactive OAuth, physical QR scanning or native Contacts import.
