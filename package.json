@@ -16,9 +16,14 @@
     "build": "pnpm --filter @card/web build",
     "preview": "pnpm --filter @card/web preview",
     "typecheck": "pnpm --filter @card/web exec tsc -b",
-    "test": "pnpm --filter @card/web test"
+    "test": "pnpm --filter @card/web test",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@freeappstore/sdk": "^0.16.39"
-  }
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.0"
+  },
+  "description": "Make a contact card, download a vCard, and explicitly publish a public page with a QR code."
 }

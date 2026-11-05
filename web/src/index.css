@@ -137,3 +137,41 @@ body { padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-are
 img, video, canvas { max-width: 100%; }
 
 }
+
+@layer base { :root { --card-green: #174e45; --card-white: #fff; --card-focus: #e3aa5c; --card-shadow: #102f2c16; --card-soft: #d6ebe5; --card-line: #b5d4ca; --card-muted: #52746b; --card-error: #ad3126; } }
+@layer components {
+ .card-page { max-width: 1120px; margin: auto; padding: 1.5rem 1rem 4rem; }
+ .card-page h1 { max-width: 17ch; }
+ .card-page h2 { font-size: 1.45rem; margin: .25rem 0 1rem; }
+ .card-page h3 { font-size: 1.15rem; margin: .5rem 0; }
+ .card-page p { line-height: 1.65; margin-bottom: 1rem; }
+ .card-page button, .card-page .actions a { padding: .65rem 1rem; min-height: 44px; border: 1px solid var(--line); border-radius: .65rem; background: var(--panel); color: var(--ink); font-weight: 650; cursor: pointer; }
+ .card-page button:disabled { opacity: .5; cursor: default; }
+ .card-page .primary { background: var(--card-green); border-color: var(--card-green); color: var(--card-white); }
+ .card-page label { display: block; font-size: .9rem; font-weight: 650; margin: .8rem 0; }
+ .card-page input { display: block; width: 100%; min-width: 0; box-sizing: border-box; padding: .7rem; margin-top: .35rem; border: 1px solid var(--line); border-radius: .5rem; background: var(--panel); color: var(--ink); font: inherit; font-weight: 400; }
+ .card-page :focus-visible { outline: 3px solid var(--card-focus); outline-offset: 3px; }
+ .editor-grid { display: grid; gap: 1.5rem; align-items: start; margin-top: 1.5rem; }
+ .panel, .business-card, .empty-card { padding: 1.5rem; border: 1px solid var(--line); border-radius: 1.1rem; background: var(--panel); min-width: 0; }
+ .business-card { background: var(--card-green); color: var(--card-white); padding: 2rem; box-shadow: 0 18px 42px var(--card-shadow); }
+ .business-card h2 { font-family: var(--font-display); font-size: 2rem; margin-top: 1.5rem; }
+ .business-card .occupation { color: var(--card-soft); }
+ .business-card a { color: var(--card-white); text-decoration: underline; text-underline-offset: 4px; }
+ .business-card .primary { border-color: var(--card-white); margin-top: 1.75rem; width: 100%; }
+ .monogram { display: grid; place-items: center; width: 64px; height: 64px; border: 1px solid var(--card-line); border-radius: 50%; font-family: var(--font-display); font-size: 1.8rem; }
+ .contact-links { display: grid; gap: .7rem; margin-top: 1.5rem; }
+ .eyebrow { letter-spacing: .12em; font-size: .72rem; font-weight: 750; color: var(--muted); }
+ .empty-card { padding: 3rem 2rem; text-align: center; border-style: dashed; }
+ .empty-card > span { display: block; font-size: 3rem; color: var(--card-muted); }
+ .actions { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
+ .sharing { margin-top: 2rem; }
+ .published-list { display: grid; gap: 1rem; margin: 1rem 0; }
+ .published-list article { padding-block: 1rem; border-bottom: 1px solid var(--line); }
+ .muted { color: var(--muted); }
+ .error { color: var(--card-error); }
+ .card-page .consent { display: flex; align-items: start; gap: .75rem; }
+ .card-page .consent input { width: 22px; height: 22px; flex: none; margin: 0; }
+ .qr-panel img { display: block; width: min(100%, 320px); height: auto; margin: auto; background: white; border-radius: .5rem; }
+ .panel ol { padding-left: 1.25rem; line-height: 1.8; margin-bottom: 1rem; }
+ @media(min-width: 780px) { .editor-grid { grid-template-columns: 1.1fr 1fr; } .card-page { padding: 2.5rem 2rem 5rem; } .preview { position: sticky; top: 6rem; } }
+}

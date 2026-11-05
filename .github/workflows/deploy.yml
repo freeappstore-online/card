@@ -57,6 +57,11 @@ jobs:
         run: bash -e -c "$BUILD_COMMAND"
       - name: Verify build output
         run: npx --yes @freeappstore/cli@0.4.67 build-target --artifact --app-id "${GITHUB_REPOSITORY##*/}"
+      - name: Install browser engines
+        timeout-minutes: 10
+        run: pnpm exec playwright install --with-deps chromium webkit
+      - name: Browser flows
+        run: pnpm test:e2e
       - name: Retain verified dependency lock
         run: |
           set -euo pipefail
