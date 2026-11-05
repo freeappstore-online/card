@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "capabilities": {
+    "pwa": {
+      "version": "1.0.1",
+      "files": {
+        "web/src/fas-capabilities/pwa.ts": "41173034f9bbcf819aaf2abae4a682ed3d478446af63f5845a04e55a2d709d30",
+        "web/fas-pwa-config.ts": "4ef48e13f7ac7403d29ad08e5edc1868f1a8c2e4af083750eae0a07a705ef493",
+        "fas-capabilities/pwa.md": "987d17a4445e6b3f2cb33f5061970a7c8c31d851a0639350b4f951739a11a61f"
+      },
+      "metadata": {
+        "install": "manifest",
+        "updates": "prompt-with-busy-guards",
+        "offline": "shell-only"
+      }
+    },
+    "cloud-data": {
+      "version": "1.0.0",
+      "files": {
+        "fas-capabilities/cloud-data.md": "1c4026e29ff6fc51d60aff1e3e4a247bb4bdc06ade46fff416d88e30466f005a"
+      },
+      "metadata": {
+        "models": "device-local,private-account,public-shared,room-restricted",
+        "device-local": "sdk-persist",
+        "private-account": "sdk-kv",
+        "public-shared": "sdk-collections:public-read",
+        "room-restricted": "backend-http:data-rooms"
+      }
+    },
+    "persistence": {
+      "version": "1.0.1",
+      "files": {
+        "fas-capabilities/persistence.ts": "e731b01c47bc4cf2bfab8fef037671513f1b6412b875eb7e757685916a13299b",
+        "fas-capabilities/persistence.md": "2679678ca4dc8c15684cf70884e1e1a5b2784c42e32ba639f23fc2c80417603d"
+      },
+      "metadata": {
+        "data": "device-local",
+        "account": "private-per-account:fas.kv",
+        "shared": "public-read:fas.collections",
+        "roomRestricted": "backend-http:data-rooms"
+      }
+    }
+  }
+}
