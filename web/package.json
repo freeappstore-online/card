@@ -10,7 +10,7 @@
     "generate:icons": "pwa-assets-generator --manifest=false"
   },
   "dependencies": {
-    "@freeappstore/sdk": "^0.16.39",
+    "@freeappstore/sdk": "^0.16.48",
     "qrcode": "1.5.4",
     "react": "^19",
     "react-dom": "^19"
