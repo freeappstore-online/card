@@ -20,7 +20,7 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@freeappstore/sdk": "^0.17.2"
+    "@freeappstore/sdk": "^0.20.0"
   },
   "devDependencies": {
     "@playwright/test": "1.64.0"
